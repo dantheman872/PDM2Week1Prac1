@@ -2,7 +2,6 @@ function setup() {
     createCanvas(400, 300);
 }
 
-
 /**
  * Creates an array and fills it with integers from 0 up to but not 
  * including maxValue.
@@ -12,14 +11,14 @@ function setup() {
  * // returns [1, 2, 3, 4]
  * maxValue(5);
  */
-function fillArray(maxValue) {
+
+function fillArray(maxValue){
     const arr = [];
     for (let i = 0; i < maxValue; i++) {
         arr.push(i);
     }
     return arr;
 }
-
 
 /**
  * Searches an array for a given value. 
@@ -34,7 +33,13 @@ function fillArray(maxValue) {
  * // returns true
  * search([5, -1, 9], 5);
  */
-
+function search(arr, value){
+    const arr = ["a", "b", "c"];
+    for (let i = o; i < arr.length; i++){
+        arr.includes(value)
+    }
+    return arr;
+}
 
 /**
  * Gets the total of all items in a number array.

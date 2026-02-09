@@ -2,6 +2,10 @@ function setup() {
     createCanvas(400, 300);
 }
 
+function draw(){
+
+    console.log()
+}
 
 /**
  * Creates a 2D array of the given dimension and fills each item with the 
@@ -15,6 +19,19 @@ function setup() {
  * gridOfStrings(3, 2, "Hi");
  */
 
+function gridOfStrings(numRows, numCols, message){
+    const arr = []
+    for(let i = 0; i < numRows; i++){
+
+        arr[i] = [];
+        for(let j = 0; j < numCols; j++){
+
+            arr[i][j] = (message)
+        }        
+    }
+    return arr;
+}
+
 
 /**
  * Calculates the total of 2D array.
@@ -25,6 +42,18 @@ function setup() {
  * sumAll([1, 3], [3, 4], [5, 6])
  */
 
+function sumAll(arr){
+
+    let sum = 0
+    for(let i = 0; i < arr.length; i++){
+        for(let j = 0; i < arr.length; i++){
+
+        sum += arr[i][j]
+        }
+        
+    }
+    return sum;
+}
 
 /**
  * Sums the inner arrays in a 2D array of numbers.
