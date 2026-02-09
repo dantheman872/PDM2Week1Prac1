@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM2 - W1P1 - 3 Star (noughts and crosses)</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="./lib/libraries/p5.min.js"></script>
+    <script src="./lib/libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 3 - Noughts and crosses</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p><em>This is an advanced exercise! You may not finish it during the practical session.</em></p>
+            <p>Try implementing noughts and crosses using a 2D array to represent the board. You can make it a two player 
+                game or let the user play against the computer. If you're not familiar with noughts and crosses, 
+                <a href="https://g.co/kgs/RF55xyb" target="_blank">play it online</a>.
+            </p>
+            <p>This is no check file for this exercise.</p>
+            <p>Example output (try to make yours look better!):</p>
+            <p>
+                <video width="300" height="300" controls>
+                    <source src="./assets/3star.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>Start by breaking the task down into it's component parts and tackle the 
+                        simplest first. For example, try drawing a 3 x 3 grid for the board. Then, 
+                        figure out how you will represent where the "X"s and "O"s are placed. You 
+                        will need a 2D array, but you'll need to figure out what to put in it.
+                    </p>
+                    <p>The two player implementation (where you act as both players) is easier to 
+                        implement than an AI opponent, even if your AI is as dumb as in the example.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
