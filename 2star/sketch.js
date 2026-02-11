@@ -4,7 +4,7 @@ function setup() {
 
 function draw(){
 
-    console.log()
+    console.log(sumAll([2,1], [3, 4], [3, 8]))
 }
 
 /**
@@ -46,11 +46,10 @@ function sumAll(arr){
 
     let sum = 0
     for(let i = 0; i < arr.length; i++){
-        for(let j = 0; i < arr.length; i++){
+        for(let j = 0; i < arr[i].length; i++){
 
         sum += arr[i][j]
-        }
-        
+        }       
     }
     return sum;
 }
@@ -63,7 +62,14 @@ function sumAll(arr){
  * // returns [4, 7, 11]
  * sumInner([1, 3], [3, 4], [5, 6])
  */
+function sumInner(arr){
 
+    let arr =[]
+    for(let i = 0; i < arr.length; i++){
+
+        
+    }
+}
 
 /**
  * Reverses the order of the nested arrays. The order of items within each nested array is

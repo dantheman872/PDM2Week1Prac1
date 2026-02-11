@@ -12,7 +12,7 @@ function setup() {
  * maxValue(5);
  */
 
-function fillArray(maxValue){
+function fillArray(){
     const arr = [];
     for (let i = 0; i < maxValue; i++) {
         arr.push(i);
