@@ -2,10 +2,6 @@ function setup() {
     createCanvas(400, 300);
 }
 
-function draw(){
-
-    console.log(sumAll([2,1], [3, 4], [3, 8]))
-}
 
 /**
  * Creates a 2D array of the given dimension and fills each item with the 
@@ -18,16 +14,13 @@ function draw(){
  * // returns [["Hi", "Hi"], ["Hi", "Hi"], ["Hi", "Hi"]]
  * gridOfStrings(3, 2, "Hi");
  */
-
-function gridOfStrings(numRows, numCols, message){
-    const arr = []
-    for(let i = 0; i < numRows; i++){
-
-        arr[i] = [];
-        for(let j = 0; j < numCols; j++){
-
-            arr[i][j] = (message)
-        }        
+function gridOfStrings(numRows, numCols, message) {
+    const arr = [];
+    for (let row = 0; row < numRows; row++) {
+        arr.push([]);
+        for (let col = 0; col< numCols; col++) {
+            arr[row].push(message);
+        }
     }
     return arr;
 }
@@ -41,18 +34,16 @@ function gridOfStrings(numRows, numCols, message){
  * // returns 22
  * sumAll([1, 3], [3, 4], [5, 6])
  */
-
-function sumAll(arr){
-
-    let sum = 0
-    for(let i = 0; i < arr.length; i++){
-        for(let j = 0; i < arr[i].length; i++){
-
-        sum += arr[i][j]
-        }       
+function sumAll(arr) {
+    let total = 0;
+    for (let row = 0; row < arr.length; row++) {
+        for (let col = 0; col < arr[row].length; col++) {
+            total += arr[row][col];
+        }
     }
-    return sum;
+    return total;
 }
+
 
 /**
  * Sums the inner arrays in a 2D array of numbers.
@@ -62,14 +53,18 @@ function sumAll(arr){
  * // returns [4, 7, 11]
  * sumInner([1, 3], [3, 4], [5, 6])
  */
-function sumInner(arr){
-
-    let arr =[]
-    for(let i = 0; i < arr.length; i++){
-
-        
+function sumInner(arr) {
+    const totals = [];
+    for (let i = 0; i < arr.length; i++) { //outer loop
+        let innerSum = 0; //innerSum is reset in the outer loop
+        for (let u = 0; u < arr[i].length; u++) { //inner loop
+            innerSum += arr[i][u];
+        }
+        totals.push(innerSum);
     }
+    return totals;
 }
+
 
 /**
  * Reverses the order of the nested arrays. The order of items within each nested array is
@@ -80,3 +75,10 @@ function sumInner(arr){
  * // returns [[7, 8, 9], [4, 5, 6], [1, 2, 3]]
  * flip([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
  */
+function flip(arr) {
+    const flipped = [];
+    for (let row = arr.length - 1; row >= 0; row--) {
+        flipped.push(arr[row]);
+    }
+    return flipped;
+}

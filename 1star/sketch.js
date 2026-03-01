@@ -2,6 +2,7 @@ function setup() {
     createCanvas(400, 300);
 }
 
+
 /**
  * Creates an array and fills it with integers from 0 up to but not 
  * including maxValue.
@@ -11,14 +12,14 @@ function setup() {
  * // returns [1, 2, 3, 4]
  * maxValue(5);
  */
-
-function fillArray(){
+function fillArray(maxValue) {
     const arr = [];
     for (let i = 0; i < maxValue; i++) {
         arr.push(i);
     }
     return arr;
 }
+
 
 /**
  * Searches an array for a given value. 
@@ -33,13 +34,15 @@ function fillArray(){
  * // returns true
  * search([5, -1, 9], 5);
  */
-function search(arr, value){
-    const arr = ["a", "b", "c"];
-    for (let i = o; i < arr.length; i++){
-        arr.includes(value)
+function search(arr, value) {
+    for (const v of arr) {
+        if (v === value) {
+            return true;
+        }
     }
-    return arr;
+    return false;
 }
+
 
 /**
  * Gets the total of all items in a number array.
@@ -51,6 +54,13 @@ function search(arr, value){
  * // returns 0
  * total([])
  */
+function total(arr) {
+    let sum = 0;
+    for (const v of arr) {
+        sum+= v;
+    }
+    return sum;
+}
 
 
 /**
@@ -64,6 +74,15 @@ function search(arr, value){
  * // returns 0
  * count([0, 35, 3, 4, 3], 7)
  */
+function count(arr, value) {
+    let num = 0;
+    for (const a of arr) {
+        if (a === value) {
+            num++;
+        }
+    }
+    return num;
+}
 
 
 /**
@@ -78,3 +97,33 @@ function search(arr, value){
  * // returns [4, 4, 4]
  * repeat([4], 3)
  */
+function repeat(arr, times) {
+    let newArr = []
+    let r = 0;
+    //this solution uses a while loop and a for loop, but there are other ways to do it (e.g. using nested for loops - see alternative solution below)
+    while (r < times) {
+        for (let i = 0; i < arr.length; i++) {
+            newArr.push(arr[i]);
+        }
+        r++;
+    }
+    return newArr;
+}
+
+/**
+ * a different way using nested loops (please note the name of the function is different to avoid confusion with the previous one, but it would not be reccomended to call a function in that way)
+ * Creates a new array that repeats the values in the original array the specified number of times.
+ */
+function repeatNested(arr, times) {
+    const newArr = []; // Create the new empty array
+    
+    // Outer loop: runs 'times' number of times
+    for (let i = 0; i < times; i++) {
+        // Inner loop: runs through the original array once
+        for (let j = 0; j < arr.length; j++) {
+            newArr.push(arr[j]); // Add the item to the new array
+        }
+    }
+    
+    return newArr;
+}
